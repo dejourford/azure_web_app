@@ -1,9 +1,9 @@
 # TODO: Azure Cloud Security Lab
 
 ## Phase 1: Deployment
-- [ ] Create resource group
-- [ ] Deploy Juice Shop web app
-- [ ] Configure NSG and VNet
+- [X] Create resource group
+- [X] Deploy Juice Shop web app
+- [X] Configure NSG and VNet
 
 ## Phase 2: Security Setup
 - [ ] Enable Microsoft Defender for Cloud
