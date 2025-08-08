@@ -50,3 +50,46 @@ Created `CloudSecLab_dev` Resource Group and its resources
  
 <hr>
 
+SSH into machine, update packages, install docker, and run Juice Shop on port 3000. 
+
+
+`Updating Packages and Installing Docker`
+
+```
+udo apt update && sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+```
+
+`Run Juice Shop on Port 3000`
+
+```
+ocker run -d \
+  --name juice-shop \
+  -p 3000:3000 \
+  bkimminich/juice-shop
+```
+
+<hr>
+
+Create `NSG` inbound rule to allow TCP connection over port 3000.
+
+
+<div align=center>
+    <img src="images/3000_rule.png" alt="3000 port inbound rule" width=800/><br />
+</div>
+
+<hr>
+
+Access Juice Shop Application via:
+
+`http://<vm-public-ip>:3000`
+
+
+<div align=center>
+    <img src="images/juice_shop.png" alt="juice shop" width=800/><br />
+</div>
+
+
+
