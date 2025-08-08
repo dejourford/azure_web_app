@@ -13,23 +13,23 @@ The goal is to practice cloud security engineering skills including environment 
 
 ## Tools Utilized
 
-*Microsoft Azure
+* Microsoft Azure
 
-*Ubuntu Virtual Machine
+* Ubuntu Virtual Machine
 
-*Kali Linux (Attacker Machine)
+* Kali Linux (Attacker Machine)
 
-*Juice Shop Application
+* Juice Shop Application
 
-*Network Security Group (NSG)
+* Network Security Group (NSG)
 
-*Log Analytics Workspace (LAW)
+* Log Analytics Workspace (LAW)
 
-*Microsoft Defender for Endpoint
+* Microsoft Defender for Endpoint
 
-*Microsoft Sentinel
+* Microsoft Sentinel
 
-*Web Application Firewall (WAF)
+* Web Application Firewall (WAF)
 
 ## Lab Architecture
 
