@@ -1,7 +1,7 @@
 # Cloud Security Lab
 
 <div align=center>
-    <img src="images/hero.png" alt="hero image" width=600/><br />
+    <img src="images/hero.png" alt="hero image" width=800/><br />
 </div>
 
 ## Purpose
@@ -38,4 +38,15 @@ The goal is to practice cloud security engineering skills including environment 
 | Alerts                          | None                           | Manual triage                             |  Custom analytics rules + response     |
 | Tags                            | `Environment=Dev`              | `Environment=Staging`                     | `Environment=Prod`, `Criticality=High`  |
 | Access Controls (RBAC)          | Owner access                   | Least privilege for staging users         | Strict RBAC (read-only for most users)  |
+
+
+## Procedure
+
+Created `CloudSecLab_dev` Resource Group and its resources
+
+<div align=center>
+    <img src="images/resource_group_dev.png" alt="dev resource group" width=600/><br />
+</div>
  
+<hr>
+
