@@ -35,7 +35,7 @@ The goal is to practice cloud security engineering skills including environment 
 
 | Feature                         | CSL_dev                        | CSL_staging                              | CSL_prod                                |
 |---------------------------------|--------------------------------|-------------------------------------------|------------------------------------------|
-| VM/App                          | Juice Shop or DVWA             | Juice Shop or DVWA                        | Juice Shop or DVWA                       |
+| VM/App                          | Juice Shop              | Juice Shop                         | Juice Shop                        |
 | VM Size                         | B1s (small)                    | B2s (medium)                              | B2s or larger                            |
 | Network Security Group (NSG)    | Open to all (for attack simulation) | Only my IP                        | Strict — limited IPs, WAF/Firewall       |
 | Defender for Cloud              | Optional or Plan 1             |  Enabled (Plan 2)                        |  Enabled (Plan 2 + alerts)             |
