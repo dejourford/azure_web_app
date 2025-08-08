@@ -91,5 +91,27 @@ Access Juice Shop Application via:
     <img src="images/juice_shop.png" alt="juice shop" width=800/><br />
 </div>
 
+<hr>
+
+Create `a-sford` user in Entra ID, assign `Virtual Machine User Login` access control to user, and locally created user on Linux machine.
+
+
+<div align=center>
+    <img src="images/create_user.png" alt="juice shop" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/add_role.png" alt="juice shop" width=800/><br />
+</div>
+
+
+
+```
+sudo adduser a-sford
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_a_sford
+ssh-copy-id -i ~/.ssh/id_rsa_a_sford.pub a-sford@<vm-public-ip>
+```
+
 
 
