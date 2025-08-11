@@ -124,3 +124,34 @@ sudo systemctl enable rsyslog
 sudo systemctl start rsyslog
 ```
 
+<hr>
+
+Repeat process for Staging and Production environments, then connect Microsoft Defender for Cloud and Microsoft Sentinel to each environment.
+
+<div align=center>
+    <img src="images/defender_for_cloud.png" alt="defender for cloud" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/verify_defender.png" alt="verify defender" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/verify_sentinel.png" alt="verify-sentinel" width=800/><br />
+</div>
+
+<div align=center>
+    <img src="images/verify_sentinel2.png" alt="verify sentinel" width=800/><br />
+</div>
+
+
+
+
+
+
+
+
+
+
