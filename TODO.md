@@ -1,22 +1,24 @@
 # TODO: Azure Cloud Security Lab
 
 ## Phase 1: Deployment
-- [X] Create resource group
-- [X] Deploy Juice Shop web app
-- [X] Configure NSG and VNet
+- [X] [ ] [ ] [ ] Create resource group
+- [X] [ ] [ ] [ ] Deploy Juice Shop web app
+- [X] [ ] [ ] [ ] Configure NSG and VNet
 
 ## Phase 2: Security Setup
-- [ ] Enable Microsoft Defender for Cloud
-- [ ] Set up Log Analytics & Sentinel
+- [X] [ ] [ ] [ ] Set up Log Analytics Workspace 
+- [ ] [ ] Enable Microsoft Defender for Cloud (staging and prod only)
+- [ ] [ ] Set up Sentinel (staging and prod only)
+
 
 ## Phase 3: Simulated Attacks
-- [ ] Run SQL injection attack
-- [ ] Run brute-force login
+- [ ] [ ] Run SQL injection attack (staging/prod only)
+- [ ] [ ] Run brute-force login (staging/prod only)
 
 ## Phase 4: Detection & Response
-- [ ] Query logs in Sentinel
-- [ ] Build analytics rules
-- [ ] Automate response with Logic Apps
+- [ ] [ ] Query logs in Sentinel (staging and prod only)
+- [ ] [ ] Build analytics rules (staging and prod only)
+- [ ] [ ] Automate response with Logic Apps (staging and prod only)
 
 
 🛠️ Skills You’ll Demonstrate
