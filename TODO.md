@@ -1,6 +1,6 @@
 # TODO: Azure Cloud Security Lab
 
-## Phase 1: Deployment [Still need to do staging/prod env]
+## Phase 1: Deployment
 - [X] Create resource group
 - [X] Deploy Juice Shop web app
 - [X] Configure NSG and VNet
