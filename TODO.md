@@ -7,8 +7,8 @@
 
 ## Phase 2: Security Setup
 - [X] Set up Log Analytics Workspace [still need to do staging/prod] 
-- [ ] Enable Microsoft Defender for Cloud (staging and prod only)
-- [ ] Set up Sentinel (staging and prod only)
+- [X] Enable Microsoft Defender for Cloud (staging and prod only)
+- [X] Set up Sentinel (staging and prod only)
 
 
 ## Phase 3: Simulated Attacks
