@@ -113,5 +113,14 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_a_sford
 ssh-copy-id -i ~/.ssh/id_rsa_a_sford.pub a-sford@<vm-public-ip>
 ```
 
+<hr>
 
+Install rsyslog and forward from journalId
+
+```
+sudo apt update
+sudo apt install rsyslog -y
+sudo systemctl enable rsyslog
+sudo systemctl start rsyslog
+```
 
