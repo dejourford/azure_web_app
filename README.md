@@ -151,6 +151,12 @@ Repeat process for Staging and Production environments, then connect Microsoft D
 
 
 
+## Blockers
+
+* had to recreate all VMs due to slow ssh connectivity and performance (maybe due to flooded login attempts?)
+* hardened NSG by only accepting SSH traffic from my IP address
+* connected development, staging, and production to Windows Defender for Endpoint
+* Not sure why all logs from all devices in different resource groups show up together
 
 
 
