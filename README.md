@@ -56,7 +56,7 @@ SSH into machine, update packages, install docker, and run Juice Shop on port 30
 `Updating Packages and Installing Docker`
 
 ```
-udo apt update && sudo apt install -y docker.io
+sudo apt update && sudo apt install -y docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
@@ -65,7 +65,7 @@ sudo usermod -aG docker $USER
 `Run Juice Shop on Port 3000`
 
 ```
-ocker run -d \
+docker run -d \
   --name juice-shop \
   -p 3000:3000 \
   bkimminich/juice-shop

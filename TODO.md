@@ -6,9 +6,9 @@
 - [X] Configure NSG and VNet
 
 ## Phase 2: Security Setup
-- [X] Set up Log Analytics Workspace [still need to do staging/prod] 
-- [X] Enable Microsoft Defender for Cloud (staging and prod only)
-- [X] Set up Sentinel (staging and prod only)
+- [X] Set up Log Analytics Workspace 
+- [X] Enable Microsoft Defender for Endpoint
+- [X] Set up Microsoft Sentinel
 
 
 ## Phase 3: Simulated Attacks
