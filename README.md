@@ -126,7 +126,7 @@ sudo systemctl start rsyslog
 
 <hr>
 
-Repeat process for Staging and Production environments, then connect Microsoft Defender for Cloud and Microsoft Sentinel to each environment.
+Repeat process for Staging and Production environments, then connect Microsoft Defender for Endpoint and Microsoft Sentinel to each environment.
 
 <div align=center>
     <img src="images/defender_for_cloud.png" alt="defender for cloud" width=800/><br />
@@ -146,7 +146,15 @@ Repeat process for Staging and Production environments, then connect Microsoft D
     <img src="images/verify_sentinel2.png" alt="verify sentinel" width=800/><br />
 </div>
 
+<hr>
 
+Remove public IP Address from VMs and use Bastion instead.
+
+<hr>
+
+Remove NSG Firewall rules allowing SSH and port 3000 access, since a Web Application Firewall (WAF) will be used instead.
+
+<hr>
 
 
 
