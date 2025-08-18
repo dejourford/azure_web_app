@@ -166,6 +166,82 @@ Remove NSG Firewall rules allowing SSH and port 3000 access, since a Web Applica
 * connected development, staging, and production to Windows Defender for Endpoint
 * Not sure why all logs from all devices in different resource groups show up together
 
+## Enterprise Procedure
+
+Step 1) Create the Hub Resource Group
+
+This step is the creation of the central entity (hub) resource group that other peripheral entities will connect to. 
+
+<hr>
+
+Step 2) Create the Virtual Network
+
+This step is the creation of the virtual network for the central hub. It will contain subnets for Bastion, Firewall, and shared services.
+
+
+<div align=center>
+    <img src="images/vnet.png" alt="virtual network setup" width=800/><br />
+</div>
+
+<hr>
+
+Step 3) Create a public IP for Bastion
+
+This step is the creation of a public IP address for Bastion. I only selected One zone for cost-saving purposes but in a real environment, all zones would be selected to increase resiliency.
+
+<div align=center>
+    <img src="images/pip.png" alt="public ip address for bastion" width=800/><br />
+</div>
+
+<hr>
+
+Step 4) Create Public IP Address for Azure Firewall
+
+A public IP Address for the Azure Firewall was created to be used by the Azure Firewall.
+
+<hr>
+
+Step 5) Deploy Azure Firewall in the Hub
+
+The Azure Firewall is deployed in the hub to serve as a central security checkpoint for the whole environment to control inbound and outbound traffic.
+
+
+<div align=center>
+    <img src="images/firewall.png" alt="create firewall" width=800/><br />
+</div>
+
+<hr>
+
+Step 6) Create Outbound and Inbound Firewall Groups 
+
+Outbound and Inbound firewall group rules were created as parent containers for all individual outbound and inbound rules. 
+
+
+<div align=center>
+    <img src="images/group-rules.png" alt="group rules" width=800/><br />
+</div>
+
+<hr>
+
+Step 7) Create Outbound HTTPS and DNS rules
+
+HTTPS and DNS rules were created to allow the Virtual Machines to make https connections over the internet and also resolve the IPs. The DNS rule has a destination address of Azure's DNS IP of 168.63.129.16. A separate deny-rule was created to deny all other outbound requests that weren't https or to the Azure DNS server.
+
+
+<div align=center>
+    <img src="images/https-rule.png" alt="https rules" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/dns-rule.png" alt="dns rule" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/deny-all.png" alt="deny all rule" width=800/><br />
+</div>
+
 
 
 
