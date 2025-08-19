@@ -42,132 +42,6 @@ The goal is to practice cloud security engineering skills including environment 
 
 ## Procedure
 
-Created `CloudSecLab_dev` Resource Group and its resources
-
-<div align=center>
-    <img src="images/resource_group_dev.png" alt="dev resource group" width=800/><br />
-</div>
- 
-<hr>
-
-SSH into machine, update packages, install docker, and run Juice Shop on port 3000. 
-
-
-`Updating Packages and Installing Docker`
-
-```
-sudo apt update && sudo apt install -y docker.io
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo usermod -aG docker $USER
-```
-
-`Run Juice Shop on Port 3000`
-
-```
-docker run -d \
-  --name juice-shop \
-  -p 3000:3000 \
-  bkimminich/juice-shop
-```
-
-<hr>
-
-Create `NSG` inbound rule to allow TCP connection over port 3000.
-
-
-<div align=center>
-    <img src="images/3000_rule.png" alt="3000 port inbound rule" width=800/><br />
-</div>
-
-<hr>
-
-Access Juice Shop Application via:
-
-`http://<vm-public-ip>:3000`
-
-
-<div align=center>
-    <img src="images/juice_shop.png" alt="juice shop" width=800/><br />
-</div>
-
-<hr>
-
-Create `a-sford` user in Entra ID, assign `Virtual Machine User Login` access control to user, and locally created user on Linux machine.
-
-
-<div align=center>
-    <img src="images/create_user.png" alt="juice shop" width=800/><br />
-</div>
-
-
-<div align=center>
-    <img src="images/add_role.png" alt="juice shop" width=800/><br />
-</div>
-
-
-
-```
-sudo adduser a-sford
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_a_sford
-ssh-copy-id -i ~/.ssh/id_rsa_a_sford.pub a-sford@<vm-public-ip>
-```
-
-<hr>
-
-Install rsyslog and forward from journalId
-
-```
-sudo apt update
-sudo apt install rsyslog -y
-sudo systemctl enable rsyslog
-sudo systemctl start rsyslog
-```
-
-<hr>
-
-Repeat process for Staging and Production environments, then connect Microsoft Defender for Endpoint and Microsoft Sentinel to each environment.
-
-<div align=center>
-    <img src="images/defender_for_cloud.png" alt="defender for cloud" width=800/><br />
-</div>
-
-
-<div align=center>
-    <img src="images/verify_defender.png" alt="verify defender" width=800/><br />
-</div>
-
-
-<div align=center>
-    <img src="images/verify_sentinel.png" alt="verify-sentinel" width=800/><br />
-</div>
-
-<div align=center>
-    <img src="images/verify_sentinel2.png" alt="verify sentinel" width=800/><br />
-</div>
-
-<hr>
-
-Remove public IP Address from VMs and use Bastion instead.
-
-<hr>
-
-Remove NSG Firewall rules allowing SSH and port 3000 access, since a Web Application Firewall (WAF) will be used instead.
-
-<hr>
-
-
-
-
-## Blockers
-
-* had to recreate all VMs due to slow ssh connectivity and performance (maybe due to flooded login attempts?)
-* hardened NSG by only accepting SSH traffic from my IP address
-* connected development, staging, and production to Windows Defender for Endpoint
-* Not sure why all logs from all devices in different resource groups show up together
-
-## Enterprise Procedure
-
 Step 1) Create the Hub Resource Group
 
 This step is the creation of the central entity (hub) resource group that other peripheral entities will connect to. 
@@ -290,4 +164,53 @@ Associating the NSG to its respective subnet, enables inbound/outbound rule appl
     <img src="images/vnet-association.png" alt="vnet association" width=800/><br />
 </div>
 
+<hr>
+
+Step 11) Create VM
+
+SSH into machine, update packages, install docker, and run Juice Shop on port 3000. 
+
+
+`Updating Packages and Installing Docker`
+
+```
+sudo apt update && sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+```
+
+`Run Juice Shop on Port 3000`
+
+```
+docker run -d \
+  --name juice-shop \
+  -p 3000:3000 \
+  bkimminich/juice-shop
+```
+
+<hr>
+
+Step 12) Create a user
+
+
+Create `a-sford` user in Entra ID, assign `Virtual Machine User Login` access control to user, and locally created user on Linux machine.
+
+
+<div align=center>
+    <img src="images/create_user.png" alt="juice shop" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/add_role.png" alt="juice shop" width=800/><br />
+</div>
+
+
+
+```
+sudo adduser a-sford
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_a_sford
+ssh-copy-id -i ~/.ssh/id_rsa_a_sford.pub a-sford@<vm-public-ip>
+```
 
