@@ -166,9 +166,24 @@ Associating the NSG to its respective subnet, enables inbound/outbound rule appl
 
 <hr>
 
-Step 11) Create VM
+Step 11) Generate SSH public key
 
-SSH into machine, update packages, install docker, and run Juice Shop on port 3000. 
+To authenticate without passwords, the SSH key was used. It's a combination of the public key and private key. The private key stays on the computer while the public key gets uploaded to Azure. This makes remote access much more secure.
+
+```powershell
+ssh-keygen -t rsa -b 4096
+
+<hr>
+
+Step 12) Create VM
+
+A Ubuntu Pro 24.04 LTS virtual machine was created and the public key from the SSH generation was applied.
+
+<hr>
+
+Step 13) Use Bastion to SSH into machine and install Juice Shop
+
+Bastion was used to gain access via SSH, packages were updated, docker was installed, and Juice Shop was run over port 3000.
 
 
 `Updating Packages and Installing Docker`
@@ -189,9 +204,16 @@ docker run -d \
   bkimminich/juice-shop
 ```
 
+
+<div align=center>
+    <img src="images/bastion.png" alt="bastion connect" width=800/><br />
+</div>
+
+
+
 <hr>
 
-Step 12) Create a user
+Step 14) Create a user
 
 
 Create `a-sford` user in Entra ID, assign `Virtual Machine User Login` access control to user, and locally created user on Linux machine.
