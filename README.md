@@ -171,7 +171,8 @@ Step 11) Generate SSH public key
 To authenticate without passwords, the SSH key was used. It's a combination of the public key and private key. The private key stays on the computer while the public key gets uploaded to Azure. This makes remote access much more secure.
 
 ```powershell
-ssh-keygen -t rsa -b 4096
+ssh-keygen -t rsa -b 4096 -f C:\Users\dejou\.ssh\id_rsa_dev
+```
 
 <hr>
 
