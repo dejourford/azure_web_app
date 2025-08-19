@@ -242,6 +242,52 @@ HTTPS and DNS rules were created to allow the Virtual Machines to make https con
     <img src="images/deny-all.png" alt="deny all rule" width=800/><br />
 </div>
 
+Step 8) Create Route Table
 
+Separate route tables were created for each environment so that the VM traffic is routed through the created firewall. Routes were then added and associated with the respective subnet.
+
+
+<div align=center>
+    <img src="images/route.png" alt="add route" width=800/><br />
+</div>
+
+<hr>
+
+Step 8) Create spokes for segmentations (resource groups)
+
+Development, Staging, and Production resource groups were created to connect to the hub.
+
+
+<div align=center>
+    <img src="images/route.png" alt="add route" width=800/><br />
+</div>
+
+<hr>
+
+Step 9) Add peering in both directions for each segmented resource group.
+
+Peering the resource groups in both directions allows all virtual networks to be interconnected.
+
+
+<div align=center>
+    <img src="images/peering.png" alt="peering" width=800/><br />
+</div>
+
+
+<div align=center>
+    <img src="images/peering2.png" alt="peering" width=800/><br />
+</div>
+
+<hr>
+
+Step 10) Create NSG for each segmented resource group and associate it.
+
+Associating the NSG to its respective subnet, enables inbound/outbound rule application for the subnet.
+
+
+
+<div align=center>
+    <img src="images/vnet-association.png" alt="vnet association" width=800/><br />
+</div>
 
 
